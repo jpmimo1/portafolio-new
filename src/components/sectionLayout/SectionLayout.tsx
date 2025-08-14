@@ -6,7 +6,7 @@ import { MenuItems } from "@/data/menu";
 type TProps = {
   title?: string;
   children: ReactNode;
-  fullPage: boolean;
+  fullPage?: boolean;
   className?: string;
   section: TSectionsPage;
   language: TLanguages;
@@ -14,7 +14,7 @@ type TProps = {
 
 export const SectionLayout = ({
   children,
-  fullPage,
+  fullPage = false,
   title,
   className,
   section,
@@ -29,7 +29,7 @@ export const SectionLayout = ({
   return (
     <div
       className={classNames(
-        "relative",
+        "relative flex flex-col",
         {
           "h-[calc(100vh-var(--header-height-default))] lg:h-[calc(100vh-var(--header-height-lg))] xl:h-[calc(100vh-var(--header-height-xl))]":
             fullPage,
@@ -42,7 +42,7 @@ export const SectionLayout = ({
           <h2 className="text-center text-4xl py-3">{title}</h2>
         </div>
       ) : null}
-      <div className="main-container">{children}</div>
+      <div className="main-container grow">{children}</div>
       <SectionObserver section={section} />
       {idSection ? (
         <div

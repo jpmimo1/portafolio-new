@@ -32,3 +32,14 @@ type TMenuLanguage = {
   title: string;
   items: TMenuItemLanguage[];
 };
+
+type THomeContent = {
+  mainText1: string;
+  mainText2: string;
+  secondText: string;
+  description: string;
+  buttonCVLabel: string;
+  buttonCVUrl: string;
+  buttonContactLabel: string;
+  buttonContactUrl: string;
+};

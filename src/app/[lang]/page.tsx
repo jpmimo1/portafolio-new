@@ -1,4 +1,5 @@
 import { SectionLayout } from "@/components/sectionLayout/SectionLayout";
+import { HomeSection } from "@/components/sections/home/HomeSection";
 
 export default async function Home({
   params,
@@ -10,13 +11,11 @@ export default async function Home({
   return (
     <div className="flex flex-col">
       <SectionLayout
-        fullPage
-        title="Inicio"
-        className="bg-content1"
+        className="lg:h-[calc(100vh-var(--header-height-lg))] xl:h-[calc(100vh-var(--header-height-xl))]"
         section="home-sec"
         language={lang}
       >
-        <div></div>
+        <HomeSection language={lang} />
       </SectionLayout>
       <SectionLayout
         fullPage
