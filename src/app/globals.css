@@ -12,6 +12,11 @@
   @apply mx-auto w-full max-w-[1536px];
 }
 
-html{
+.section-container {
+  @apply max-w-[1100px] mx-auto w-full;
+}
+
+html {
   scroll-behavior: smooth;
+  background-color: var(--background-section);
 }

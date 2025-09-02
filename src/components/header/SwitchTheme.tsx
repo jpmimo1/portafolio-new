@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export const SwitchTheme = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const SwitchTheme = () => {
   if (!mounted) return null;
   return (
     <Switch
-      isSelected={theme === "light"}
+      isSelected={resolvedTheme === "light"}
       onValueChange={(isSelected) => {
         setTheme(isSelected ? "light" : "dark");
       }}

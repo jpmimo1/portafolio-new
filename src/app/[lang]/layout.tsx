@@ -5,7 +5,7 @@ import "../../../public/icons/icons.css";
 
 import { Header } from "@/components/header/Header";
 import { Providers } from "../providers";
-import { MenuItems, MenuLanguages } from "@/data/menu";
+import { Footer } from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +31,6 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
 
-  const menuItems = MenuItems[lang];
-
-  const menuLanguage = MenuLanguages[lang];
-
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
@@ -43,19 +39,14 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>
-          <>
-            <Header
-              menuItems={menuItems}
-              menuLanguage={menuLanguage}
-              language={lang}
-            />
-          </>
+        <Providers language={lang}>
+          <Header language={lang} />
           <main>
             <div className="pt-[var(--header-height-default)] lg:pt-[var(--header-height-lg)] xl:pt-[var(--header-height-xl)]">
               {children}
             </div>
           </main>
+          <Footer language={lang} />
         </Providers>
       </body>
     </html>

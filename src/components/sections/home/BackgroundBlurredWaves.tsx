@@ -18,15 +18,15 @@ const darkColors = {
 
 export const BackgroundBlurredWaves = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const colors = useMemo(() => {
-    return theme === "dark" ? darkColors : lightColors;
-  }, [theme]);
+    return resolvedTheme === "dark" ? darkColors : lightColors;
+  }, [resolvedTheme]);
 
   if (!mounted) return null;
 

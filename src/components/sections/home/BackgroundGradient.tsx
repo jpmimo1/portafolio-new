@@ -13,15 +13,15 @@ const darkColors = ["#102323", "#007f77", "#00a492"];
 
 export const BackgroundGradient = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const colors = useMemo(() => {
-    return theme === "dark" ? darkColors : lightColors;
-  }, [theme]);
+    return resolvedTheme === "dark" ? darkColors : lightColors;
+  }, [resolvedTheme]);
 
   if (!mounted) return null;
 

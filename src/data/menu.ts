@@ -77,6 +77,25 @@ export const MenuItems: { [key in TLanguages]: TMenuItem[] } = {
   ],
 };
 
+export const MenuProjectItems: { [key in TLanguages]: TMenuItem[] } = {
+  es: [
+    {
+      icon: "home",
+      label: "Inicio",
+      url: "/",
+      key: "home-sec",
+    },
+  ],
+  en: [
+    {
+      icon: "home",
+      label: "Home",
+      url: "/",
+      key: "home-sec",
+    },
+  ],
+};
+
 export const MenuLanguages: { [key in TLanguages]: TMenuLanguage } = {
   es: {
     title: "Idiomas",

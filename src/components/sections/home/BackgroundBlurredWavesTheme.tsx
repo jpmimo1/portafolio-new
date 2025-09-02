@@ -28,7 +28,7 @@ const darkColors = [
 ];
 
 export default function ElegantWaves() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   const [heightContainer, setHeightContainer] = useState(0);
@@ -37,8 +37,8 @@ export default function ElegantWaves() {
 
   // Paleta según tema
   const colors = useMemo(() => {
-    return theme === "dark" ? darkColors : lightColors;
-  }, [theme]);
+    return resolvedTheme === "dark" ? darkColors : lightColors;
+  }, [resolvedTheme]);
 
   useEffect(() => {
     setMounted(true);

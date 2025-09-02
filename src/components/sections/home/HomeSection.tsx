@@ -6,8 +6,6 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdMail, MdPictureAsPdf } from "react-icons/md";
 import TypewriterFramer from "./Technologies";
 import { motion, Variants } from "framer-motion";
-import { BackgroundGradient } from "./BackgroundGradient";
-import { BackgroundBlurredWaves } from "./BackgroundBlurredWaves";
 import ElegantWaves from "./BackgroundBlurredWavesTheme";
 
 type TProps = {

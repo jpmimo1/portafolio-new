@@ -80,7 +80,7 @@ const technologies: TColorsTechnologies[] = [
 ];
 
 export default function TypewriterFramer() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -122,7 +122,7 @@ export default function TypewriterFramer() {
   const stylesText: CSSProperties = useMemo(() => {
     const { colorOficial, altDark, altLight, modeDark, modeLight } =
       technologies[wordIndex];
-    if (theme === "light") {
+    if (resolvedTheme === "light") {
       if (modeLight === "text") {
         return { color: altDark };
       }
@@ -132,7 +132,7 @@ export default function TypewriterFramer() {
       return { color: altLight };
     }
     return { backgroundColor: altLight, color: colorOficial };
-  }, [wordIndex, theme]);
+  }, [wordIndex, resolvedTheme]);
 
   if (!mounted) return null;
 
