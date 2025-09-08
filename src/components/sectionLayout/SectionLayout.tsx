@@ -54,7 +54,7 @@ export const SectionLayout = ({
           <div className="main-container px-4 text-primary-600">
             <h2
               className={cn(
-                "text-medium font-semibold py-1 mb-4 lg:mb-8 text-left font-mono border-b-1 border-primary/80",
+                "text-medium font-semibold py-1 mb-4 lg:mb-8 text-left font-mono border-b-1 border-primary/80 lg:text-lg lg:font-normal",
                 classNames?.title
               )}
             >

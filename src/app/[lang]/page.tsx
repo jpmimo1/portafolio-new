@@ -9,15 +9,95 @@ import { SkillsSection } from "@/components/sections/skills/SkillsSection";
 import { AboutText } from "@/data/about";
 import { ContactText } from "@/data/contact";
 import { ExpereinceText } from "@/data/experience";
+import { LISTLANGUAGES } from "@/data/language";
 import { ProjectsText } from "@/data/projects";
 import { SkillsText } from "@/data/skills";
+import { Metadata } from "next";
 
-export default async function Home({
+const DOMAIN_URL = process.env.DOMAIN_URL as string;
+
+type TParams = {
+  lang: TLanguages;
+};
+
+type TMetadata = {
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  ogUrl: string;
+};
+
+const metadataLanguage: { [key in TLanguages]: TMetadata } = {
+  es: {
+    title: "Jean Paul Flores | Desarrollador Full Stack",
+    description:
+      "Soy Jean Paul Flores, desarrollador full stack especializado en React, Next.js, Node.js y PostgreSQL. Creo aplicaciones web modernas, escalables y de alto rendimiento.",
+    keywords:
+      "Jean Paul Flores, Jean Paul Flores Auquimayta, desarrollador full stack, React, Next.js, Node.js, PostgreSQL, portafolio, proyectos web",
+    ogTitle: "Jean Paul Flores | Portafolio Full Stack Developer",
+    ogDescription:
+      "Explora mis proyectos y experiencia en desarrollo web con tecnologías modernas como React, Next.js, Node.js y PostgreSQL.",
+    ogImage: "/images/screenshots/screenshot-es.png",
+    ogUrl: `${DOMAIN_URL}/es`,
+  },
+  en: {
+    title: "Jean Paul Flores | Full Stack Developer",
+    description:
+      "I am Jean Paul Flores, a full stack developer specialized in React, Next.js, Node.js, and PostgreSQL. I build modern, scalable, and high-performance web applications.",
+    keywords:
+      "Jean Paul Flores, Jean Paul Flores Auquimayta, full stack developer, React, Next.js, Node.js, PostgreSQL, portfolio, web projects",
+    ogTitle: "Jean Paul Flores | Full Stack Developer Portfolio",
+    ogDescription:
+      "Discover my projects and experience in web development with modern technologies like React, Next.js, Node.js, and PostgreSQL.",
+    ogImage: "/images/screenshots/screenshot-en.png",
+    ogUrl: `${DOMAIN_URL}/en`,
+  },
+};
+
+export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: TLanguages }>;
-}) {
+  params: Promise<TParams>;
+}): Promise<Metadata> {
   const { lang } = await params;
+
+  const {
+    title,
+    description,
+    keywords,
+    ogDescription,
+    ogImage,
+    ogTitle,
+    ogUrl,
+  } = metadataLanguage[lang];
+
+  return {
+    title,
+    description,
+    keywords,
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      images: ogImage,
+      url: ogUrl,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const languages = LISTLANGUAGES;
+
+  const params: TParams[] = languages.map((lang) => ({ lang }));
+
+  return params;
+}
+
+export default async function Home({ params }: { params: Promise<TParams> }) {
+  const { lang } = await params;
+  if (!lang) return null;
 
   const aboutTitle = AboutText[lang].title;
   const skillsTitle = SkillsText[lang].title;

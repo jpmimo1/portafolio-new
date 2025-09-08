@@ -26,7 +26,7 @@ export const ProjectsSection = ({ language }: TProps) => {
   return (
     <div>
       <p className="mb-6">{subTitle}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8">
         {projectsShow.map((project, i) => {
           return <ProjectCard key={i} project={project} language={language} />;
         })}

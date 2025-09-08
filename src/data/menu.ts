@@ -82,16 +82,40 @@ export const MenuProjectItems: { [key in TLanguages]: TMenuItem[] } = {
     {
       icon: "home",
       label: "Inicio",
-      url: "/",
+      url: "/es/#inicio",
       key: "home-sec",
+    },
+    {
+      icon: "projects",
+      label: "Mis proyectos",
+      url: "/es/#proyectos",
+      key: "projects-sec",
+    },
+    {
+      icon: "contact",
+      label: "Contáctame",
+      url: "/es/#contacto",
+      key: "contact-sec",
     },
   ],
   en: [
     {
       icon: "home",
       label: "Home",
-      url: "/",
+      url: "/en/#home",
       key: "home-sec",
+    },
+    {
+      icon: "projects",
+      label: "My projects",
+      url: "/en/#projects",
+      key: "projects-sec",
+    },
+    {
+      icon: "contact",
+      label: "Contact me",
+      url: "/en/#contact",
+      key: "contact-sec",
     },
   ],
 };

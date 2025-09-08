@@ -12,6 +12,8 @@ import {
   Tailwind,
 } from "@react-email/components";
 
+const DOMAIN_URL = process.env.DOMAIN_URL as string;
+
 const textsLanguages = {
   es: {
     preview: "✅ Tu mensaje ha sido recibido - ¡Gracias!",
@@ -54,7 +56,7 @@ export function ContactConfirmationEmail({
             {/* Header */}
             <Section>
               <Img
-                src="https://www.jeanpaulflores.com/assets/images/technologies/shadcn-ui.png"
+                src={`${DOMAIN_URL}/images/logo.png`}
                 width="50"
                 height="50"
                 alt="Your Logo"

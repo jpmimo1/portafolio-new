@@ -7,7 +7,11 @@ import { Button } from "@heroui/button";
 import Link from "next/link";
 import { FaGithub, FaLink } from "react-icons/fa";
 import { PhotoGallery } from "./components/PhotoGallery";
+import { Metadata } from "next";
+
 export const dynamicParams = false;
+
+const DOMAIN_URL = process.env.DOMAIN_URL as string;
 
 const technologiesTitle: { [key in TLanguages]: string } = {
   es: "Tecnologías utilizadas",
@@ -30,6 +34,60 @@ const viewGitHub: { [key in TLanguages]: string } = {
 };
 
 type TParams = { lang: TLanguages; project: string };
+
+type TMetadata = {
+  title: string;
+  keywords: string;
+  ogTitle: string;
+};
+
+const metadataLanguage: { [key in TLanguages]: TMetadata } = {
+  es: {
+    title: "Jean Paul Flores",
+    keywords: "Jean Paul Flores, Jean Paul Flores Auquimayta, proyectos web",
+    ogTitle: "Jean Paul Flores",
+  },
+  en: {
+    title: "Jean Paul Flores",
+    keywords: "Jean Paul Flores, Jean Paul Flores Auquimayta, web projects",
+    ogTitle: "Jean Paul Flores",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<TParams>;
+}): Promise<Metadata> {
+  const { lang, project } = await params;
+  const projectData = ProjectsText[lang].projects.find(
+    ({ urlProject }) => urlProject === project
+  );
+
+  if (!projectData) return {};
+
+  const {
+    title: titleProject,
+    description: descriptionProject,
+    mainImage,
+    urlProject,
+    keyWords: keyWordsProject,
+  } = projectData;
+
+  const { title, keywords, ogTitle } = metadataLanguage[lang];
+
+  return {
+    title: `${titleProject} | ${title}`,
+    description: descriptionProject,
+    keywords: `${titleProject}, ${keyWordsProject.join(", ")}, ${keywords}`,
+    openGraph: {
+      title: ogTitle,
+      description: descriptionProject,
+      images: mainImage,
+      url: `${DOMAIN_URL}/${lang}/project/${urlProject}`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const languages = Object.keys(ProjectsText) as TLanguages[];
@@ -87,7 +145,6 @@ export default async function Project({
             {title}
           </h1>
           <PhotoGallery gallery={gallery} />
-          {/* <EmblaCarousel /> */}
           <p>{descriptionLong}</p>
         </div>
         <div className="flex gap-3 mb-8">

@@ -1,6 +1,5 @@
 "use client";
 
-import { useBackgroundTransitions } from "@/hooks/useBackgroundTransitions";
 import React, {
   createContext,
   ReactNode,
@@ -34,7 +33,6 @@ const sectionsRatio: TSectionsRatio = {
 
 export const HeaderProvider = ({
   children,
-  language,
 }: {
   children: ReactNode;
   language: TLanguages;

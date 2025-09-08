@@ -1,5 +1,7 @@
+import { ProjectsText } from "@/data/projects";
 import { Select, SelectItem } from "@heroui/select";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { useMemo } from "react";
 import { MdLanguage } from "react-icons/md";
 
 type TProps = {
@@ -9,6 +11,50 @@ type TProps = {
 
 export const SelectLanguage = ({ language, menuLanguage }: TProps) => {
   const router = useRouter();
+  const params = useParams();
+
+  const projectUrl = useMemo(() => {
+    return params.project;
+  }, [params]);
+
+  const urlLanguages = useMemo(() => {
+    if (!projectUrl) {
+      return null;
+    }
+
+    const projectLanguage = ProjectsText[language].projects.find(
+      ({ urlProject }) => urlProject === projectUrl
+    );
+
+    if (!projectLanguage) {
+      return null;
+    }
+
+    const projectId = projectLanguage.id;
+
+    const languagesUrls = (Object.keys(ProjectsText) as TLanguages[]).reduce<{
+      [key in TLanguages]: string;
+    }>(
+      (prev, currentLang) => {
+        const projectLang = ProjectsText[currentLang].projects.find(
+          ({ id }) => id === projectId
+        );
+
+        if (!projectLang) {
+          return { ...prev, [currentLang]: "" };
+        }
+
+        return {
+          ...prev,
+          [currentLang]: `/${currentLang}/project/${projectLang.urlProject}`,
+        };
+      },
+      {} as { [key in TLanguages]: string }
+    );
+
+    return languagesUrls;
+  }, [language, projectUrl]);
+
   return (
     <div className="flex items-center gap-1">
       <div className="w-[75px]">
@@ -17,7 +63,17 @@ export const SelectLanguage = ({ language, menuLanguage }: TProps) => {
           selectedKeys={[language]}
           onSelectionChange={(keys) => {
             const arr = Array.from(keys as Set<string>);
-            router.push(`/${arr[0]}`);
+            const keySelect = arr[0] as TLanguages;
+            if (!keySelect || keySelect === language) {
+              return;
+            }
+
+            if (!urlLanguages) {
+              router.push(`/${keySelect}`);
+              return;
+            }
+
+            router.push(urlLanguages[keySelect]);
           }}
           variant="underlined"
           aria-label="language"
@@ -33,7 +89,7 @@ export const SelectLanguage = ({ language, menuLanguage }: TProps) => {
           }}
           classNames={{
             popoverContent: "w-[110px]",
-            trigger:'after:hidden shadow-none'
+            trigger: "after:hidden shadow-none",
           }}
           color="primary"
         >

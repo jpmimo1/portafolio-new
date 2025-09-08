@@ -1,15 +1,16 @@
 "use client";
 
 import { Button } from "@heroui/button";
-import { Link as LinkUI } from "@heroui/link";
 import classNames from "classnames";
 import Link from "next/link";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { FaGithub, FaHome, FaLaptopCode, FaLinkedin } from "react-icons/fa";
 import { IoMail, IoPerson } from "react-icons/io5";
 import { MdMenuBook, MdOutlineClose, MdWork } from "react-icons/md";
 import { SwitchTheme } from "./SwitchTheme";
 import { useHeaderContext } from "@/providers/headerProvider/HeaderProvider";
+import { useParams } from "next/navigation";
+import { ProjectsText } from "@/data/projects";
 
 type TProps = {
   open: boolean;
@@ -35,7 +36,50 @@ export const MobilMenu = ({
   language,
   menuLanguage,
 }: TProps) => {
+  const params = useParams();
   const { currentSection } = useHeaderContext();
+
+  const projectUrl = useMemo(() => {
+    return params.project;
+  }, [params]);
+
+  const urlLanguages = useMemo(() => {
+    if (!projectUrl) {
+      return null;
+    }
+
+    const projectLanguage = ProjectsText[language].projects.find(
+      ({ urlProject }) => urlProject === projectUrl
+    );
+
+    if (!projectLanguage) {
+      return null;
+    }
+
+    const projectId = projectLanguage.id;
+
+    const languagesUrls = (Object.keys(ProjectsText) as TLanguages[]).reduce<{
+      [key in TLanguages]: string;
+    }>(
+      (prev, currentLang) => {
+        const projectLang = ProjectsText[currentLang].projects.find(
+          ({ id }) => id === projectId
+        );
+
+        if (!projectLang) {
+          return { ...prev, [currentLang]: "" };
+        }
+
+        return {
+          ...prev,
+          [currentLang]: `/${currentLang}/project/${projectLang.urlProject}`,
+        };
+      },
+      {} as { [key in TLanguages]: string }
+    );
+
+    return languagesUrls;
+  }, [language, projectUrl]);
 
   return (
     <>
@@ -85,7 +129,7 @@ export const MobilMenu = ({
                   {menuItems.map(({ icon, label, url, key }) => {
                     return (
                       <Button
-                        as={LinkUI}
+                        as={Link}
                         onClick={(e) => {
                           e.preventDefault();
                           onClose();
@@ -98,9 +142,13 @@ export const MobilMenu = ({
                         className="text-foreground"
                         key={key}
                         startContent={iconsMenu[icon]}
-                        href={`/${language}${url}`}
+                        href={`${url}`}
                         size="lg"
-                        variant={currentSection === key ? "flat" : "light"}
+                        variant={
+                          !projectUrl && currentSection === key
+                            ? "flat"
+                            : "light"
+                        }
                         radius="none"
                         color="primary"
                       >
@@ -119,12 +167,18 @@ export const MobilMenu = ({
                 {menuLanguage.items.map(({ key, label }) => {
                   return (
                     <Button
+                      as={Link}
+                      href={urlLanguages ? urlLanguages[key] : `/${key}`}
                       key={key}
                       variant={key === language ? "solid" : "bordered"}
                       className={key === language ? "text-white" : ""}
-                      as={Link}
-                      href={`/${key}`}
                       color="primary"
+                      onClick={(e) => {
+                        if (key === language) {
+                          onClose();
+                          e.preventDefault();
+                        }
+                      }}
                     >
                       {label}
                     </Button>

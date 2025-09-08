@@ -38,7 +38,7 @@ export const Header = ({ language }: TProps) => {
           "h-[var(--header-height-default)] lg:h-[var(--header-height-lg)] xl:h-[var(--header-height-xl)]"
         )}
       >
-        <div className="main-container flex justify-between px-2 items-end">
+        <div className="section-container flex justify-between px-2 items-end">
           <Link href={"/"}>
             <span className="iconportafoliojp-iconjp flex text-4xl xl:text-5xl text-primary dark:text-foreground "></span>
           </Link>

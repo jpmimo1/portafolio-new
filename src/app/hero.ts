@@ -103,19 +103,19 @@ export default heroui({
           DEFAULT: "#142a26",
         },
         content1: {
-          DEFAULT: "#d8f7f1",
+          DEFAULT: "#f8fdfc",
           foreground: "#000",
         },
         content2: {
-          DEFAULT: "#a3e0d6",
+          DEFAULT: "#f8fdfc",
           foreground: "#000",
         },
         content3: {
-          DEFAULT: "#eef4ff",
+          DEFAULT: "#f8fdfc",
           foreground: "#000",
         },
         content4: {
-          DEFAULT: "#dde9fe",
+          DEFAULT: "#f8fdfc",
           foreground: "#000",
         },
         focus: "#006FEE",
@@ -225,19 +225,19 @@ export default heroui({
           DEFAULT: "#ffffff",
         },
         content1: {
-          DEFAULT: "#1a2826",
+          DEFAULT: "#0e1716",
           foreground: "#fff",
         },
         content2: {
-          DEFAULT: "#344b47",
+          DEFAULT: "#0e1716",
           foreground: "#fff",
         },
         content3: {
-          DEFAULT: "#08426e",
+          DEFAULT: "#0e1716",
           foreground: "#fff",
         },
         content4: {
-          DEFAULT: "#032541",
+          DEFAULT: "#0e1716",
           foreground: "#fff",
         },
         focus: "#006FEE",

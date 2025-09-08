@@ -7,6 +7,8 @@ import { MdMail, MdPictureAsPdf } from "react-icons/md";
 import TypewriterFramer from "./Technologies";
 import { motion, Variants } from "framer-motion";
 import ElegantWaves from "./BackgroundBlurredWavesTheme";
+import Link from "next/link";
+import { GITHUB_URL, LINKEDIN_URL } from "@/data/globals";
 
 type TProps = {
   language: TLanguages;
@@ -42,15 +44,6 @@ export const HomeSection = ({ language }: TProps) => {
     buttonContactLabel,
     buttonContactUrl,
   } = homeData;
-
-  // useEffect(() => {
-  //   // Ocultar animación después de 3s
-  //   const timer = setTimeout(() => {
-  //     setShow(false);
-  //     onFinish();
-  //   }, 3000);
-  //   return () => clearTimeout(timer);
-  // }, [onFinish]);
 
   return (
     <>
@@ -93,22 +86,27 @@ export const HomeSection = ({ language }: TProps) => {
                 className="flex gap-2 lg:gap-4 justify-center mb-10 lg:mb-14"
               >
                 <Button
+                  as={Link}
+                  href={buttonContactUrl}
                   variant="bordered"
                   color="primary"
                   startContent={<MdMail size={20} />}
                   className="w-[150px] lg:w-[180px] lg:text-medium lg:gap-3 lg:h-12"
                   radius="full"
                 >
-                  {buttonCVLabel}
+                  {buttonContactLabel}
                 </Button>
                 <Button
+                  as={Link}
+                  target="_blank"
+                  href={buttonCVUrl}
                   variant="bordered"
                   color="primary"
                   startContent={<MdPictureAsPdf size={20} />}
                   className="w-[150px] lg:w-[180px] lg:text-medium lg:gap-3 lg:h-12"
                   radius="full"
                 >
-                  {buttonContactLabel}
+                  {buttonCVLabel}
                 </Button>
               </motion.div>
               <motion.div
@@ -116,6 +114,9 @@ export const HomeSection = ({ language }: TProps) => {
                 className="flex justify-center gap-2 lg:gap-4"
               >
                 <Button
+                  as={Link}
+                  target="_blank"
+                  href={GITHUB_URL}
                   isIconOnly
                   variant="light"
                   size="lg"
@@ -126,6 +127,9 @@ export const HomeSection = ({ language }: TProps) => {
                   <FaGithub size={30} className="lg:h-9 lg:w-9" />
                 </Button>
                 <Button
+                  as={Link}
+                  target="_blank"
+                  href={LINKEDIN_URL}
                   isIconOnly
                   variant="light"
                   size="lg"
@@ -155,9 +159,6 @@ export const HomeSection = ({ language }: TProps) => {
           </div>
         </div>
       </motion.div>
-      {/* <BackgroundGradient /> */}
-      {/* <BackgroundBlurredWaves /> */}
-      {/* <BackgroundBlurredWavesTheme /> */}
       <ElegantWaves />
     </>
   );

@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type TProps = {
   language: TLanguages;
@@ -104,6 +105,8 @@ export const AboutSection = ({ language }: TProps) => {
       </div>
       <motion.div className="flex gap-2 lg:gap-6" variants={fadeRight}>
         <Button
+          as={Link}
+          href={buttonAction1Url}
           startContent={<FaLaptopCode size={20} />}
           color="primary"
           variant="solid"
@@ -112,6 +115,8 @@ export const AboutSection = ({ language }: TProps) => {
           {buttonAction1Label}
         </Button>
         <Button
+          as={Link}
+          href={buttonAction2Url}
           startContent={<IoMail size={20} />}
           color="primary"
           variant="solid"

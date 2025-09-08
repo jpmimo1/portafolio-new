@@ -2,7 +2,7 @@ export const FooterText: { [key in TLanguages]: TFooter } = {
   es: {
     contactTitle: "Contacto",
     copyright: "Todos los derechos reservados.",
-    mail: "paul.fa.ac@gmail.com",
+    mail: "contact@jeanpaulflores.com",
     navigationItems: [
       {
         label: "Inicio",
@@ -35,7 +35,7 @@ export const FooterText: { [key in TLanguages]: TFooter } = {
   en: {
     contactTitle: "Contact",
     copyright: "All rights reserved.",
-    mail: "paul.fa.ac@gmail.com",
+    mail: "contact@jeanpaulflores.com",
     navigationItems: [
       {
         label: "Home",

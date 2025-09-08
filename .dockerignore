@@ -1,0 +1,17 @@
+# dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# build
+.next/cache
+.next/server/**/*.map
+
+# sistema
+.DS_Store
+*.swp
+*.swo
+*.log
+.git
+.gitignore

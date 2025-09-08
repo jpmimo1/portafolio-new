@@ -40,13 +40,17 @@ export const ProjectCard = ({ project, language }: TProps) => {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Card radius="sm" className="bg-white/80 dark:bg-content1 " shadow="sm">
+      <Card
+        radius="sm"
+        className="bg-white/80 dark:bg-content1 max-w-[450px] mx-auto"
+        shadow="sm"
+      >
         <Image
           alt={title}
           src={mainImage}
-          width={500}
-          height={500}
-          className="aspect-video object-cover w-full"
+          width={700}
+          height={700}
+          className="aspect-[15/9] object-cover w-full"
         />
         <div className="p-3 pb-4">
           <NextLink href={fullUrl}>

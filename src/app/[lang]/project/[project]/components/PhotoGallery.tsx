@@ -74,7 +74,7 @@ export const PhotoGallery = ({ gallery }: TProps) => {
                 return (
                   <div
                     key={i}
-                    className="embla-photo__slide aspect-video"
+                    className="embla-photo__slide aspect-[15/9]"
                     onClick={() => {
                       setPhotoModal(gallery[photoSelect]);
                       setOpenModal(true);
@@ -83,8 +83,8 @@ export const PhotoGallery = ({ gallery }: TProps) => {
                     <Image
                       src={imageUrl}
                       alt=""
-                      width={800}
-                      height={800}
+                      width={1200}
+                      height={1200}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -102,7 +102,7 @@ export const PhotoGallery = ({ gallery }: TProps) => {
                     <div
                       key={i}
                       className={classNames(
-                        "embla__slide aspect-video cursor-pointer rounded-sm transition-all duration-500 ease-in relative",
+                        "embla__slide aspect-[15/9] cursor-pointer rounded-sm transition-all duration-500 ease-in relative",
                         {
                           "brightness-75 blur-[0.5px] grayscale-50":
                             imageUrl !== gallery[photoSelect],
