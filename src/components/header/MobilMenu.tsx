@@ -11,6 +11,7 @@ import { SwitchTheme } from "./SwitchTheme";
 import { useHeaderContext } from "@/providers/headerProvider/HeaderProvider";
 import { useParams } from "next/navigation";
 import { ProjectsText } from "@/data/projects";
+import { GITHUB_URL, LINKEDIN_URL } from "@/data/globals";
 
 type TProps = {
   open: boolean;
@@ -189,20 +190,26 @@ export const MobilMenu = ({
           </div>
           <div className="flex gap-2 justify-center p-2">
             <Button
+              as={Link}
+              target="_blank"
               isIconOnly
               size="lg"
               color="primary"
               variant="light"
               radius="full"
+              href={GITHUB_URL}
             >
               <FaGithub size={30} />
             </Button>
             <Button
+              as={Link}
+              target="_blank"
               isIconOnly
               size="lg"
               color="primary"
               variant="light"
               radius="full"
+              href={LINKEDIN_URL}
             >
               <FaLinkedin size={30} />
             </Button>
