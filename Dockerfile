@@ -17,6 +17,8 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 # Etapa 3: producción
@@ -25,20 +27,27 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 # Crear usuario sin privilegios
 RUN addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
 
-# Copiar archivos necesarios
-COPY --from=builder /app/next.config.ts ./
-COPY --from=builder /app/package.json ./
+# Crear carpetas necesarias y asignar permisos al usuario nextjs
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+
+# Copiar la carpeta public (imágenes estáticas, favicon, etc.)
 COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.env ./.env
+
+# Copiar el output standalone generado por Next.js
+# Esto incluye un server.js minificado y solo las dependencias estrictamente necesarias
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+# Copiar los archivos estáticos de Next.js al directorio standalone
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
