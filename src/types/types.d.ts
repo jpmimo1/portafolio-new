@@ -91,6 +91,7 @@ type TExperience = {
 type TTechnologies =
   | "React"
   | "Next.js"
+  | "NestJS"
   | "TypeScript"
   | "Node.js"
   | "shadcn/ui"
@@ -111,7 +112,11 @@ type TTechnologies =
   | "SQL Server"
   | "Python"
   | "HeroUI"
-  | "Docker";
+  | "Docker"
+  | "Redis"
+  | "BullMQ"
+  | "FFmpeg"
+  | "Cloudflare R2";
 
 type TTechnologiesFormat = {
   label: TTechnologies;

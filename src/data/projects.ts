@@ -6,6 +6,46 @@ export const ProjectsText: { [key in TLanguages]: TProjectsContent } = {
     projects: [
       {
         id: "1",
+        title: "VideoOptima – Plataforma Asíncrona de Procesamiento de Video",
+        description:
+          "Optimiza, recorta y transforma videos de forma asíncrona mediante microservicios y colas de tareas con FFmpeg.",
+        descriptionLong:
+          "Plataforma de alto rendimiento diseñada bajo una arquitectura de microservicios desacoplados para el procesamiento asíncrono de video. Utiliza un patrón de doble rol donde una API HTTP gestiona peticiones y genera URLs firmadas para cargas directas a la nube, mientras que un Worker dedicado consume tareas pesadas de una cola distribuida en Redis (BullMQ). El procesamiento de video (compresión, recortes, capturas y cambios de formato) se ejecuta nativamente mediante binarios de FFmpeg sobre contenedores Docker optimizados con imágenes multi-stage y Alpine Linux. Cuenta con persistencia en PostgreSQL con Prisma 7, almacenamiento en Cloudflare R2 con cuotas automáticas de retención de datos, y comunicación en tiempo real mediante eventos.",
+        technologies: [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "Docker",
+          "Prisma ORM",
+          "PostgreSQL",
+          "Redis",
+          "BullMQ",
+          "FFmpeg",
+          "Cloudflare R2",
+          "Zustand",
+        ],
+        urlLive: "https://videooptima.jeanpaulflores.com",
+        urlRepository: "https://github.com/jpmimo1/video-optimizer",
+        urlProject:
+          "videooptima-plataforma-asincrona-de-procesamiento-de-video",
+        mainImage: "/images/projects/videooptima-0.webp",
+        gallery: [
+          "/images/projects/videooptima-0.webp",
+          "/images/projects/videooptima-1.webp",
+          "/images/projects/videooptima-2.webp",
+          "/images/projects/videooptima-3.webp",
+        ],
+        keyWords: [
+          "Microservicios",
+          "Procesamiento Asíncrono",
+          "Docker Compose",
+          "FFmpeg",
+          "BullMQ & Redis",
+          "Cloudflare R2",
+        ],
+      },
+      {
+        id: "2",
         title: "Weather App – Clima en tiempo real",
         description:
           "Consulta el clima en cualquier lugar, con diseño dinámico según la hora del día.",
@@ -46,6 +86,45 @@ export const ProjectsText: { [key in TLanguages]: TProjectsContent } = {
     projects: [
       {
         id: "1",
+        title: "VideoOptima – Asynchronous Video Processing Platform",
+        description:
+          "Optimize, trim, and transform videos asynchronously using microservices and job queues powered by FFmpeg.",
+        descriptionLong:
+          "A high-performance platform engineered under a decoupled microservices architecture for asynchronous video manipulation. It implements a dual-role pattern where an HTTP API manages user requests and creates pre-signed URLs for direct cloud uploads, while a headless Worker node consumes compute-heavy tasks from a distributed Redis queue (BullMQ). All video pipelines (compression, trimming, thumbnails, and container conversion) execute natively via FFmpeg binaries inside optimized multi-stage Alpine Linux Docker containers. Features database persistence using PostgreSQL with Prisma 7, Cloudflare R2 object storage with automatic 24-hour retention policies, and real-time status updates through event streams.",
+        technologies: [
+          "Next.js",
+          "NestJS",
+          "TypeScript",
+          "Docker",
+          "Prisma ORM",
+          "PostgreSQL",
+          "Redis",
+          "BullMQ",
+          "FFmpeg",
+          "Cloudflare R2",
+          "Zustand",
+        ],
+        urlLive: "https://videooptima.jeanpaulflores.com",
+        urlRepository: "https://github.com/jpmimo1/video-optimizer",
+        urlProject: "videooptima-asynchronous-video-processing-platform",
+        mainImage: "/images/projects/videooptima-0.webp",
+        gallery: [
+          "/images/projects/videooptima-0.webp",
+          "/images/projects/videooptima-1.webp",
+          "/images/projects/videooptima-2.webp",
+          "/images/projects/videooptima-3.webp",
+        ],
+        keyWords: [
+          "Microservices",
+          "Asynchronous Processing",
+          "Docker Compose",
+          "FFmpeg",
+          "BullMQ & Redis",
+          "Cloudflare R2",
+        ],
+      },
+      {
+        id: "2",
         title: "Weather App – Real-time Weather",
         description:
           "Check the weather anywhere, with a dynamic design that adapts to the time of day.",
