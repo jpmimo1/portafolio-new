@@ -115,4 +115,29 @@ export const TechnologiesFormat: TTechnologiesFormat[] = [
     light: { backgroundColor: "#2496ED", textColor: "#FFFFFF" },
     dark: { backgroundColor: "#1B6CA8", textColor: "#FFFFFF" },
   },
+  {
+    label: "NestJS",
+    light: { backgroundColor: "#E0234E", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#BA1A3E", textColor: "#FFFFFF" },
+  },
+  {
+    label: "Redis",
+    light: { backgroundColor: "#DC382D", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#A62820", textColor: "#FFFFFF" },
+  },
+  {
+    label: "BullMQ",
+    light: { backgroundColor: "#4F46E5", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#3730A3", textColor: "#FFFFFF" },
+  },
+  {
+    label: "FFmpeg",
+    light: { backgroundColor: "#007808", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#005906", textColor: "#FFFFFF" },
+  },
+  {
+    label: "Cloudflare R2",
+    light: { backgroundColor: "#F38020", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#C96313", textColor: "#FFFFFF" },
+  },
 ];
