@@ -1,4 +1,4 @@
-import { ExpereinceText } from "@/data/experience";
+import { ExperienceText } from "@/data/experience";
 import { TimelineItem } from "./TimeLineItem";
 import { compareDesc, parseISO } from "date-fns";
 
@@ -7,7 +7,7 @@ type TProps = {
 };
 
 export const Timeline = ({ language }: TProps) => {
-  const experienceHistory = ExpereinceText[language].history.sort(
+  const experienceHistory = ExperienceText[language].history.sort(
     (experienceA, experienceB) => {
       const toA =
         experienceA.endDate !== "" ? parseISO(experienceA.endDate) : new Date();
@@ -15,7 +15,7 @@ export const Timeline = ({ language }: TProps) => {
         experienceB.endDate !== "" ? parseISO(experienceB.endDate) : new Date();
 
       return compareDesc(toA, toB);
-    }
+    },
   );
 
   return (

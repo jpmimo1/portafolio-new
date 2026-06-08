@@ -37,6 +37,7 @@ type THomeContent = {
   mainText1: string;
   mainText2: string;
   secondText: string;
+  thirdText: string;
   description: string;
   buttonCVLabel: string;
   buttonCVUrl: string;
@@ -116,7 +117,9 @@ type TTechnologies =
   | "Redis"
   | "BullMQ"
   | "FFmpeg"
-  | "Cloudflare R2";
+  | "Cloudflare R2"
+  | "Clerk"
+  | "Linux VPS";
 
 type TTechnologiesFormat = {
   label: TTechnologies;

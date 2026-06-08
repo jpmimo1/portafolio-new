@@ -8,7 +8,7 @@ import { ProjectsSection } from "@/components/sections/projects/ProjectsSection"
 import { SkillsSection } from "@/components/sections/skills/SkillsSection";
 import { AboutText } from "@/data/about";
 import { ContactText } from "@/data/contact";
-import { ExpereinceText } from "@/data/experience";
+import { ExperienceText } from "@/data/experience";
 import { LISTLANGUAGES } from "@/data/language";
 import { ProjectsText } from "@/data/projects";
 import { SkillsText } from "@/data/skills";
@@ -28,32 +28,46 @@ type TMetadata = {
   ogDescription: string;
   ogImage: string;
   ogUrl: string;
+  twitterCard: string;
+  twitterTitle: string;
+  twitterDescription: string;
+  twitterImage: string;
 };
 
 const metadataLanguage: { [key in TLanguages]: TMetadata } = {
   es: {
-    title: "Jean Paul Flores | Desarrollador Full Stack",
+    title: "Jean Paul Flores | Ingeniero de Software Full-Stack",
     description:
-      "Soy Jean Paul Flores, desarrollador full stack especializado en React, Next.js, Node.js y PostgreSQL. Creo aplicaciones web modernas, escalables y de alto rendimiento.",
+      "Ingeniero de Software Full-Stack especializado en el ecosistema TypeScript (React, Next.js, NestJS, PostgreSQL). Diseño arquitecturas escalables y SaaS.",
     keywords:
-      "Jean Paul Flores, Jean Paul Flores Auquimayta, desarrollador full stack, React, Next.js, Node.js, PostgreSQL, portafolio, proyectos web",
-    ogTitle: "Jean Paul Flores | Portafolio Full Stack Developer",
+      "Jean Paul Flores, Ingeniero de Software, Desarrollador Full-Stack, TypeScript, React, Next.js, NestJS, PostgreSQL, Node.js, Arquitectura SaaS, Microservicios, Docker",
+    ogTitle: "Jean Paul Flores | Portafolio de Ingeniería de Software",
     ogDescription:
-      "Explora mis proyectos y experiencia en desarrollo web con tecnologías modernas como React, Next.js, Node.js y PostgreSQL.",
+      "Explora mi experiencia y proyectos. Especializado en diseñar plataformas SaaS, microservicios y arquitecturas escalables con TypeScript y Node.js.",
     ogImage: "/images/screenshots/screenshot-es.png",
     ogUrl: `${DOMAIN_URL}/es`,
+    twitterCard: "summary_large_image",
+    twitterTitle: "Jean Paul Flores | Ingeniero de Software",
+    twitterDescription:
+      "Explora mi experiencia y proyectos en arquitecturas escalables con TypeScript y Node.js.",
+    twitterImage: "/images/screenshots/screenshot-es.png",
   },
   en: {
-    title: "Jean Paul Flores | Full Stack Developer",
+    title: "Jean Paul Flores | Full-Stack Software Engineer",
     description:
-      "I am Jean Paul Flores, a full stack developer specialized in React, Next.js, Node.js, and PostgreSQL. I build modern, scalable, and high-performance web applications.",
+      "Full-Stack Software Engineer specializing in the TypeScript ecosystem (React, Next.js, NestJS, PostgreSQL). I design scalable architectures and SaaS.",
     keywords:
-      "Jean Paul Flores, Jean Paul Flores Auquimayta, full stack developer, React, Next.js, Node.js, PostgreSQL, portfolio, web projects",
-    ogTitle: "Jean Paul Flores | Full Stack Developer Portfolio",
+      "Jean Paul Flores, Software Engineer, Full-Stack Developer, TypeScript, React, Next.js, NestJS, PostgreSQL, Node.js, SaaS Architecture, Microservices, Docker",
+    ogTitle: "Jean Paul Flores | Software Engineering Portfolio",
     ogDescription:
-      "Discover my projects and experience in web development with modern technologies like React, Next.js, Node.js, and PostgreSQL.",
+      "Explore my experience and projects. Specialized in building SaaS platforms, microservices, and scalable architectures with TypeScript and Node.js.",
     ogImage: "/images/screenshots/screenshot-en.png",
     ogUrl: `${DOMAIN_URL}/en`,
+    twitterCard: "summary_large_image",
+    twitterTitle: "Jean Paul Flores | Software Engineer",
+    twitterDescription:
+      "Explore my experience and projects in scalable architectures with TypeScript and Node.js.",
+    twitterImage: "/images/screenshots/screenshot-en.png",
   },
 };
 
@@ -72,6 +86,9 @@ export async function generateMetadata({
     ogImage,
     ogTitle,
     ogUrl,
+    twitterTitle,
+    twitterDescription,
+    twitterImage,
   } = metadataLanguage[lang];
 
   return {
@@ -81,8 +98,24 @@ export async function generateMetadata({
     openGraph: {
       title: ogTitle,
       description: ogDescription,
-      images: ogImage,
       url: ogUrl,
+      siteName: "Jean Paul Flores Portfolio",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+      locale: lang === "es" ? "es_ES" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [twitterImage],
     },
   };
 }
@@ -101,7 +134,7 @@ export default async function Home({ params }: { params: Promise<TParams> }) {
 
   const aboutTitle = AboutText[lang].title;
   const skillsTitle = SkillsText[lang].title;
-  const experienceTitle = ExpereinceText[lang].title;
+  const experienceTitle = ExperienceText[lang].title;
   const projectsTitle = ProjectsText[lang].title;
   const contactTitle = ContactText[lang].title;
 

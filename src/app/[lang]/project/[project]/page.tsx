@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, project } = await params;
   const projectData = ProjectsText[lang].projects.find(
-    ({ urlProject }) => urlProject === project
+    ({ urlProject }) => urlProject === project,
   );
 
   if (!projectData) return {};
@@ -101,7 +101,7 @@ export async function generateStaticParams() {
 
       return [...prev, ...projectLang];
     },
-    []
+    [],
   );
 
   return params;
@@ -115,7 +115,7 @@ export default async function Project({
   const { lang, project } = await params;
 
   const projectData = ProjectsText[lang].projects.find(
-    ({ urlProject }) => urlProject === project
+    ({ urlProject }) => urlProject === project,
   );
 
   if (!projectData) {
@@ -148,30 +148,34 @@ export default async function Project({
           <p>{descriptionLong}</p>
         </div>
         <div className="flex gap-3 mb-8">
-          <Button
-            as={Link}
-            href={urlLive}
-            radius="sm"
-            color="secondary"
-            variant="solid"
-            size="md"
-            target="_blank"
-            endContent={<FaLink className="text-2xl" />}
-          >
-            {liveDemo[lang]}
-          </Button>
-          <Button
-            as={Link}
-            href={urlRepository}
-            radius="sm"
-            color="primary"
-            variant="solid"
-            size="md"
-            target="_blank"
-            endContent={<FaGithub className="text-2xl" />}
-          >
-            {viewGitHub[lang]}
-          </Button>
+          {urlLive && (
+            <Button
+              as={Link}
+              href={urlLive}
+              radius="sm"
+              color="secondary"
+              variant="solid"
+              size="md"
+              target="_blank"
+              endContent={<FaLink className="text-2xl" />}
+            >
+              {liveDemo[lang]}
+            </Button>
+          )}
+          {urlRepository && (
+            <Button
+              as={Link}
+              href={urlRepository}
+              radius="sm"
+              color="primary"
+              variant="solid"
+              size="md"
+              target="_blank"
+              endContent={<FaGithub className="text-2xl" />}
+            >
+              {viewGitHub[lang]}
+            </Button>
+          )}
         </div>
         <div className="mb-8">
           <h3 className="text-secondary dark:text-secondary-500 text-lg font-semibold mb-2">

@@ -1,4 +1,4 @@
-import { ExpereinceText } from "@/data/experience";
+import { ExperienceText } from "@/data/experience";
 import { useMemo } from "react";
 import { Timeline } from "./TimeLine";
 
@@ -8,7 +8,7 @@ type TProps = {
 
 export const ExperienceSection = ({ language }: TProps) => {
   const experienceSubtitle = useMemo(() => {
-    return ExpereinceText[language].subTitle;
+    return ExperienceText[language].subTitle;
   }, [language]);
 
   return (
