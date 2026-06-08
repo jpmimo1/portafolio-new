@@ -14,7 +14,7 @@ type TColorsTechnologies = {
 
 const technologies: TColorsTechnologies[] = [
   {
-    label: " React.js",
+    label: "React.js",
     colorOficial: "#61DAFB",
     altDark: "#21A1C4",
     altLight: "#00A3CC",
@@ -30,14 +30,6 @@ const technologies: TColorsTechnologies[] = [
     modeDark: "highlight",
   },
   {
-    label: "Node.js",
-    colorOficial: "#339933",
-    altDark: "#267326",
-    altLight: "#66BB66",
-    modeLight: "text",
-    modeDark: "text",
-  },
-  {
     label: "TypeScript",
     colorOficial: "#3178C6",
     altDark: "#255A92",
@@ -46,10 +38,10 @@ const technologies: TColorsTechnologies[] = [
     modeDark: "text",
   },
   {
-    label: "Tailwind CSS",
-    colorOficial: "#38BDF8",
-    altDark: "#1E90D6",
-    altLight: "#4CCBFF",
+    label: "Node.js",
+    colorOficial: "#339933",
+    altDark: "#267326",
+    altLight: "#66BB66",
     modeLight: "text",
     modeDark: "text",
   },
@@ -74,6 +66,14 @@ const technologies: TColorsTechnologies[] = [
     colorOficial: "#336791",
     altDark: "#254B6A",
     altLight: "#4C8CC9",
+    modeLight: "text",
+    modeDark: "text",
+  },
+  {
+    label: "Tailwind CSS",
+    colorOficial: "#38BDF8",
+    altDark: "#1E90D6",
+    altLight: "#4CCBFF",
     modeLight: "text",
     modeDark: "text",
   },

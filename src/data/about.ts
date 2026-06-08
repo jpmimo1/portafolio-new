@@ -2,9 +2,9 @@ export const AboutText: { [key in TLanguages]: TAboutContent } = {
   es: {
     title: "Acerca de mí",
     subTitle:
-      "Desarrollador web apasionado por crear soluciones modernas y escalables.",
+      "Ingeniero de Software enfocado en construir plataformas SaaS y aplicaciones web escalables.",
     content:
-      "Soy <strong>Full-Stack Developer</strong> con experiencia en <strong>React, Node.js, Python, TypeScript</strong> y bases de datos SQL, especialmente PostgreSQL. Me apasiona construir aplicaciones web completas y eficientes con un fuerte enfoque en la experiencia del usuario.<br><br>Me enorgullece ser alguien que cuida los detalles, asegurando que cada proyecto sea escalable, confiable y diseñado con intención.<br><br>Además, estoy en constante aprendizaje: disfruto investigando, probando y aplicando nuevos conocimientos para mantenerme siempre actualizado y aportar valor innovador a cada proyecto.<br><br>He trabajado también con tecnologías y herramientas complementarias dentro del ecosistema web, lo que me permite adaptarme fácilmente a distintos entornos y necesidades técnicas.",
+      "Soy un <strong>Ingeniero de Software Full-Stack</strong> especializado en el ecosistema de <strong>TypeScript</strong>, destacando en tecnologías como <strong>React, Next.js, Node.js, NestJS</strong> y bases de datos relacionales, especialmente <strong>PostgreSQL</strong>.<br><br>Mi experiencia se centra en diseñar arquitecturas para sistemas distribuidos, desarrollar <strong>plataformas SaaS multi-tenant</strong> y llevar productos desde su concepción hasta producción. Me enfoco fuertemente en el rendimiento, la experiencia del desarrollador (DX) y la creación de soluciones mantenibles que resuelvan problemas de negocio reales.<br><br>A lo largo de mi carrera, he liderado iniciativas de modernización de <strong>sistemas legacy</strong> y trabajado activamente con infraestructuras cloud, integrando herramientas como <strong>Docker, Redis y flujos de trabajo asíncronos</strong>.<br><br>Me enorgullece ser alguien que cuida los detalles técnicos y arquitectónicos, asegurando que cada proyecto no solo sea funcional, sino que esté estructurado de forma confiable para escalar y adaptarse a nuevas necesidades técnicas.",
     buttonAction1Label: "Ver Proyectos",
     buttonAction1Url: "#proyectos",
     buttonAction2Label: "Contacto",
@@ -13,9 +13,9 @@ export const AboutText: { [key in TLanguages]: TAboutContent } = {
   en: {
     title: "About me",
     subTitle:
-      "Web Developer passionate about building modern and scalable solutions.",
+      "Software Engineer focused on building scalable SaaS platforms and robust web applications.",
     content:
-      "I am a <strong>Full-Stack Developer</strong> with experience in <strong>React, Node.js, Python, TypeScript</strong>, and SQL databases, especially PostgreSQL. I am passionate about building complete and efficient web applications with a strong focus on user experience.<br><br>I take pride in being someone who pays close attention to detail, ensuring every project is scalable, reliable, and thoughtfully designed.<br><br>I am also in constant learning: I enjoy researching, experimenting, and applying new knowledge to stay up to date and bring innovative value to every project.<br><br>I have also worked with complementary technologies and tools within the web ecosystem, which allows me to easily adapt to different environments and technical requirements.",
+      "I am a <strong>Full-Stack Software Engineer</strong> specializing in the <strong>TypeScript</strong> ecosystem, with deep expertise in <strong>React, Next.js, Node.js, NestJS</strong>, and relational databases, especially <strong>PostgreSQL</strong>.<br><br>My experience revolves around designing distributed system architectures, developing <strong>multi-tenant SaaS platforms</strong>, and taking products from concept to production. I focus heavily on performance, developer experience (DX), and building maintainable solutions that solve real business problems.<br><br>Throughout my career, I have led <strong>legacy system</strong> modernization initiatives and actively worked with cloud-based infrastructures, integrating tools like <strong>Docker, Redis, and asynchronous workflows</strong>.<br><br>I take pride in paying close attention to technical and architectural details, ensuring that every project is not only functional but reliably structured to scale and adapt to new technical requirements.",
     buttonAction1Label: "See Projects",
     buttonAction1Url: "#projects",
     buttonAction2Label: "Contact",

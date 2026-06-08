@@ -8,7 +8,7 @@ type TProps = {
 export const TechnologyItem = ({ skillItem }: TProps) => {
   const { name, url } = skillItem;
   return (
-    <div className="flex flex-col items-center gap-2 mr-3 lg:mr-5 w-[calc((100%-(0.75rem*3))/4)] lg:w-[calc((100%-(1.25rem*3))/4)] last:mr-0 transform transition-transform duration-300 hover:scale-105 active:scale-105">
+    <div className="flex flex-col items-center gap-2  w-[calc((100%-(0.75rem*3))/4)] lg:w-[calc((100%-(1.25rem*3))/4)] transform transition-transform duration-300 hover:scale-105 active:scale-105">
       <Card
         className="bg-default-50/20 dark:bg-default-900/20 flex flex-col justify-between gap-2 items-center w-full p-1 mx-auto aspect-square"
         shadow="sm"

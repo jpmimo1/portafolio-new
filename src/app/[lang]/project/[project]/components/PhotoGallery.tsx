@@ -4,10 +4,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import Fade from "embla-carousel-fade";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import "./style.css";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/react";
+import "./style.css";
 
 type TProps = {
   gallery: string[];
@@ -74,7 +74,7 @@ export const PhotoGallery = ({ gallery }: TProps) => {
                 return (
                   <div
                     key={i}
-                    className="embla-photo__slide aspect-[15/9]"
+                    className="embla-photo__slide aspect-[14/9]"
                     onClick={() => {
                       setPhotoModal(gallery[photoSelect]);
                       setOpenModal(true);
@@ -83,7 +83,7 @@ export const PhotoGallery = ({ gallery }: TProps) => {
                     <Image
                       src={imageUrl}
                       alt=""
-                      width={1200}
+                      width={1500}
                       height={1200}
                       className="w-full h-full object-cover"
                     />

@@ -140,4 +140,14 @@ export const TechnologiesFormat: TTechnologiesFormat[] = [
     light: { backgroundColor: "#F38020", textColor: "#FFFFFF" },
     dark: { backgroundColor: "#C96313", textColor: "#FFFFFF" },
   },
+  {
+    label: "Clerk",
+    light: { backgroundColor: "#6C47FF", textColor: "#FFFFFF" },
+    dark: { backgroundColor: "#512FFF", textColor: "#FFFFFF" },
+  },
+  {
+    label: "Linux VPS",
+    light: { backgroundColor: "#FCC624", textColor: "#000000" },
+    dark: { backgroundColor: "#D19A00", textColor: "#000000" },
+  },
 ];

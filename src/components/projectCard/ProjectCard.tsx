@@ -42,21 +42,23 @@ export const ProjectCard = ({ project, language }: TProps) => {
     >
       <Card
         radius="sm"
-        className="bg-white/80 dark:bg-content1 max-w-[450px] mx-auto"
+        className="bg-white/80 dark:bg-content1 max-w-[450px] mx-auto shadow-sm hover:shadow-lg transition-all border border-default-300"
         shadow="sm"
       >
-        <Image
-          alt={title}
-          src={mainImage}
-          width={700}
-          height={700}
-          className="aspect-[15/9] object-cover w-full"
-        />
-        <div className="p-3 pb-4">
+        <NextLink href={fullUrl}>
+          <Image
+            alt={title}
+            src={mainImage}
+            width={700}
+            height={700}
+            className="aspect-[14/9] object-cover w-full"
+          />
+        </NextLink>
+        <div className="p-3 pb-4 border-t border-default-200">
           <NextLink href={fullUrl}>
-            <h4 className="text-primary font-semibold mb-2">{title}</h4>
+            <h4 className="text-foreground hover:text-primary font-semibold mb-2 transition-colors">{title}</h4>
           </NextLink>
-          <p className="text-sm/snug overflow-hidden h-10 line-clamp-2 mb-5">
+          <p className="text-sm/snug text-foreground-200 overflow-hidden h-10 line-clamp-2 mb-5">
             {description}
           </p>
           <TechnologiesArea technologies={technologies} />
@@ -74,30 +76,34 @@ export const ProjectCard = ({ project, language }: TProps) => {
               {seeMore[language]}
             </Link>
             <div className="flex gap-2">
-              <Button
-                as={NextLink}
-                href={urlLive}
-                isIconOnly
-                radius="full"
-                color="secondary"
-                variant="flat"
-                size="sm"
-                target="_blank"
-              >
-                <FaLink className="text-xl" />
-              </Button>
-              <Button
-                as={NextLink}
-                href={urlRepository}
-                isIconOnly
-                radius="full"
-                color="secondary"
-                variant="flat"
-                size="sm"
-                target="_blank"
-              >
-                <FaGithub className="text-xl" />
-              </Button>
+              {urlLive && (
+                <Button
+                  as={NextLink}
+                  href={urlLive}
+                  isIconOnly
+                  radius="full"
+                  color="secondary"
+                  variant="flat"
+                  size="sm"
+                  target="_blank"
+                >
+                  <FaLink className="text-xl" />
+                </Button>
+              )}
+              {urlRepository && (
+                <Button
+                  as={NextLink}
+                  href={urlRepository}
+                  isIconOnly
+                  radius="full"
+                  color="secondary"
+                  variant="flat"
+                  size="sm"
+                  target="_blank"
+                >
+                  <FaGithub className="text-xl" />
+                </Button>
+              )}
             </div>
           </div>
         </div>

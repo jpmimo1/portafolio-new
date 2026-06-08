@@ -22,7 +22,7 @@ export const SkillsGroup = ({ skillGroup }: TProps) => {
       </h4>
       <Divider className="h-[1px] bg-primary-300/20 dark:bg-divider/10" />
       <div className="pt-3 lg:p-5">
-        <div className="flex justify-center flex-wrap">
+        <div className="flex justify-center flex-wrap gap-x-3 gap-y-3 lg:gap-x-5 lg:gap-y-3">
           {items.map((item) => {
             return <TechnologyItem key={item.name} skillItem={item} />;
           })}

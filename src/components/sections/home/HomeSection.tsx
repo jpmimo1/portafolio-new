@@ -2,8 +2,8 @@
 import { HomeText } from "@/data/home";
 import { Button } from "@heroui/button";
 import Image from "next/image";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { MdMail, MdPictureAsPdf } from "react-icons/md";
+import { FaGithub, FaLaptopCode, FaLinkedinIn } from "react-icons/fa";
+import { MdPictureAsPdf } from "react-icons/md";
 import TypewriterFramer from "./Technologies";
 import { motion, Variants } from "framer-motion";
 import ElegantWaves from "./BackgroundBlurredWavesTheme";
@@ -88,9 +88,9 @@ export const HomeSection = ({ language }: TProps) => {
                 <Button
                   as={Link}
                   href={buttonContactUrl}
-                  variant="bordered"
+                  variant="solid"
                   color="primary"
-                  startContent={<MdMail size={20} />}
+                  startContent={<FaLaptopCode size={20} />}
                   className="w-[150px] lg:w-[180px] lg:text-medium lg:gap-3 lg:h-12"
                   radius="full"
                 >
