@@ -136,25 +136,117 @@ type TTechnologiesFormat = {
   };
 };
 
-type TProject = {
-  id: string;
+type TProjectDecision = {
   title: string;
   description: string;
-  descriptionLong: string;
+};
+
+type TProjectFeature = {
+  title: string;
+  description: string;
+};
+
+type TProjectDetails = {
+  overview: string;
+  problem: string;
+  responsibilities: string[];
+  features: TProjectFeature[];
+  technicalDecisions: TProjectDecision[];
+  deployment: string;
+};
+
+type TProjectImage = {
+  id: string;
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+// Source data: a single image with text in both languages.
+type TProjectImageSource = {
+  id: string;
+  src: string;
+  alt: Record<TLanguages, string>;
+  caption?: Record<TLanguages, string>;
+};
+
+type TProject = {
+  id: string;
+
+  // Presentation: reusable in cards and the detail page.
+  title: string;
+  subtitle: string;
+  category: string;
+  description: string;
+  role: string;
+  contribution: string;
+
+  // Short selection for cards and full list for the detail page.
+  featuredTechnologies: TTechnologies[];
   technologies: TTechnologies[];
+
+  // Expanded content.
+  details: TProjectDetails;
+
+  // Navigation.
   urlLive: string;
-  urlRepository: string;
+  urlRepository?: string;
   urlProject: string;
-  mainImage: string;
-  gallery: string[];
+
+  // Images.
+  coverImageId: string;
+  gallery: TProjectImage[];
+
+  // Metadata.
+  seo: {
+    title: string;
+    description: string;
+  };
   keyWords: string[];
+};
+
+type TProjectsLabels = {
+  viewProject: string;
+  viewAllProjects: string;
+  openApp: string;
+  sourceCode: string;
+  contribution: string;
+  role: string;
+  overview: string;
+  problem: string;
+  responsibilities: string;
+  features: string;
+  technicalDecisions: string;
+  deployment: string;
+  technologies: string;
+  gallery: string;
+  galleryImage: string;
+  previousImage: string;
+  nextImage: string;
+  openImage: string;
+  closeGallery: string;
+  pauseGallery: string;
+  playGallery: string;
+  relatedProjects: string;
+  backToProjects: string;
 };
 
 type TProjectsContent = {
   title: string;
   subTitle: string;
+  labels: TProjectsLabels;
   projects: TProject[];
 };
+
+type TProjectShared = Pick<
+  TProject,
+  | "id"
+  | "featuredTechnologies"
+  | "technologies"
+  | "urlLive"
+  | "urlRepository"
+  | "coverImageId"
+>;
 
 type TFormInput = {
   label: string;
