@@ -14,7 +14,7 @@ type TColorsTechnologies = {
 
 const technologies: TColorsTechnologies[] = [
   {
-    label: "React.js",
+    label: "React",
     colorOficial: "#61DAFB",
     altDark: "#21A1C4",
     altLight: "#00A3CC",
@@ -95,6 +95,11 @@ const technologies: TColorsTechnologies[] = [
   },
 ];
 
+const animatedTechnologyLabels = ["React", "Next.js", "TypeScript", "NestJS"];
+const animatedTechnologies = technologies.filter(({ label }) =>
+  animatedTechnologyLabels.includes(label),
+);
+
 export default function TypewriterFramer() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -108,7 +113,7 @@ export default function TypewriterFramer() {
       if (showText === 0) {
         clearInterval(interval);
         setTimeout(() => {
-          setWordIndex((prev) => (prev + 1) % technologies.length);
+          setWordIndex((prev) => (prev + 1) % animatedTechnologies.length);
         }, 500);
       }
       showText--;
@@ -116,7 +121,7 @@ export default function TypewriterFramer() {
   };
 
   useEffect(() => {
-    const currentWord = technologies[wordIndex].label;
+    const currentWord = animatedTechnologies[wordIndex].label;
     let i = 0;
     const typingInterval = setInterval(() => {
       setDisplayText(currentWord.slice(0, i + 1));
@@ -137,7 +142,7 @@ export default function TypewriterFramer() {
 
   const stylesText: CSSProperties = useMemo(() => {
     const { colorOficial, altDark, altLight, modeDark, modeLight } =
-      technologies[wordIndex];
+      animatedTechnologies[wordIndex];
     if (resolvedTheme === "light") {
       if (modeLight === "text") {
         return { color: altDark };

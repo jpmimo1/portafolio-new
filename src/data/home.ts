@@ -5,7 +5,7 @@ export const HomeText: { [key in TLanguages]: THomeContent } = {
     secondText: "Ingeniero de Software Full-Stack",
     thirdText:
       "Construyendo plataformas SaaS escalables y aplicaciones web robustas.",
-    description: "Especializado en ",
+    description: "Desarrollo con ",
     buttonCVLabel: "Descargar CV",
     buttonCVUrl: "/docs/cv/Resume_Es.pdf",
     buttonContactLabel: "Ver Proyectos",
@@ -16,7 +16,7 @@ export const HomeText: { [key in TLanguages]: THomeContent } = {
     mainText2: "Jean Paul Flores",
     secondText: "Full-Stack Software Engineer",
     thirdText: "Building scalable SaaS platforms and robust web applications.",
-    description: "Specialized in ",
+    description: "I build with ",
     buttonCVLabel: "Download CV",
     buttonCVUrl: "/docs/cv/Resume_En.pdf",
     buttonContactLabel: "View Projects",
