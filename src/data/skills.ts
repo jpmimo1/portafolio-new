@@ -1,8 +1,8 @@
 export const SkillsText: { [key in TLanguages]: TSkillsContent } = {
   es: {
-    title: "Mis conocimientos técnicos",
+    title: "Tecnologías y herramientas",
     subTitle:
-      "Estas son algunas de las herramientas y tecnologías con las que trabajo día a día para construir aplicaciones modernas, escalables y eficientes.",
+      "Tecnologías que utilizo en mi experiencia profesional y en mis proyectos propios.",
     groups: {
       frontend: {
         label: "Frontend",
@@ -45,9 +45,9 @@ export const SkillsText: { [key in TLanguages]: TSkillsContent } = {
     },
   },
   en: {
-    title: "My technical skills",
+    title: "Technologies & Tools",
     subTitle:
-      "Here are some of the tools and technologies I use to build modern, scalable, and efficient applications.",
+      "Technologies I use in my professional work and independent projects.",
     groups: {
       frontend: {
         label: "Frontend",

@@ -1,6 +1,6 @@
 "use client";
 
-import { presentLabel } from "@/data/experience";
+import { modalityLabels, presentLabel } from "@/data/experience";
 import { Divider } from "@heroui/react";
 import classNames from "classnames";
 import { format, isValid, parseISO } from "date-fns";
@@ -38,8 +38,9 @@ const formatDate = (dateString: string, language: TLanguages) => {
 export const TimelineItem = ({ experienceItem, language, index }: TProps) => {
   const refContainer = useRef<HTMLDivElement>(null);
   const isInView = useInView(refContainer, { once: true, margin: "-200px" });
-  const { company, endDate, startDate, position, responsibilities } =
+  const { company, modality, endDate, startDate, position, responsibilities } =
     experienceItem;
+  const modalityLabel = modalityLabels[language][modality];
 
   const endFormat = useMemo(() => {
     return formatDate(endDate, language);
@@ -89,6 +90,11 @@ export const TimelineItem = ({ experienceItem, language, index }: TProps) => {
             <div className={classNames("pl-1", { "lg:pr-2 lg:pl:0": isOdd })}>
               <p className={classNames("px-1", { "lg:text-right": isOdd })}>
                 {company}
+                {modalityLabel ? (
+                  <span className="text-sm text-foreground/70">
+                    {" · "}{modalityLabel}
+                  </span>
+                ) : null}
               </p>
               <div
                 className={classNames(

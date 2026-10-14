@@ -1,108 +1,108 @@
 export const ExperienceText: { [key in TLanguages]: TExperience } = {
   es: {
-    title: "Experiencia Laboral",
+    title: "Experiencia laboral",
     subTitle:
-      "A lo largo de mi trayectoria he tenido la oportunidad de trabajar en proyectos diversos que me han permitido crecer como desarrollador y profesional.",
+      "Experiencia desarrollando aplicaciones web, herramientas de gestión y soluciones para distintos sectores.",
     history: [
       {
         company: "TREMGroup",
+        modality: "remote",
         position: "Desarrollador Front-End",
         startDate: "2023-01-01",
         endDate: "",
         responsibilities: [
-          "Diseñé e implementé un <strong>sistema de edición visual contextual</strong> para el CMS inmobiliario (IDX Boost), desarrollando componentes reutilizables como <i>SelectableItem</i> y <i>ModalEditor</i> para unificar flujos de trabajo.",
-          "Lideré la adopción progresiva de <strong>TypeScript</strong> en un código base legacy extenso de React y Redux, mejorando la robustez del código y la experiencia del desarrollador.",
-          "Participé activamente en la <strong>migración de React 16 a React 18</strong>, actualizando dependencias críticas, reemplazando bibliotecas obsoletas y resolviendo conflictos de compatibilidad.",
-          "Desarrollé un <strong>constructor visual basado en cuadrículas (grid)</strong> con capacidades drag-and-drop, otorgando flexibilidad total en la creación de páginas y reduciendo la dependencia de layouts rígidos.",
-          "Implementé interfaces avanzadas de gestión en el producto, como el módulo para la administración y asignación de <i>tripwires</i> a sitios web específicos.",
+          "Desarrollé <strong>herramientas de edición visual y un constructor drag-and-drop</strong> para un CMS inmobiliario utilizado por clientes en Estados Unidos.",
+          "Lideré la <strong>adopción progresiva de TypeScript</strong> en un código base de React y Redux, y participé en la migración de React 16 a React 18.",
+          "Desarrollé <strong>componentes reutilizables y nuevas funcionalidades con React y Next.js</strong>, contribuyendo a la modernización de la plataforma.",
+          "Utilicé <strong>Sentry para investigar y resolver errores</strong>, y participé en la validación de cambios y despliegues en entornos de desarrollo y producción.",
         ],
       },
       {
         company: "Valtec Consultores",
+        modality: "remote",
         position: "Desarrollador Full-Stack",
         startDate: "2022-01-01",
         endDate: "2023-08-01",
         responsibilities: [
-          "Desarrollé y mantuve aplicaciones empresariales utilizando <strong>React, .NET, SQL Server y Oracle</strong>, implementando nuevas características e integraciones en arquitecturas complejas.",
-          "Diseñé e implementé interfaces de usuario altamente interactivas introduciendo tecnologías frontend modernas dentro de sistemas empresariales legacy.",
-          "Contribuí al desarrollo y despliegue de una <strong>plataforma de monitoreo IoT en Google Cloud</strong>, integrando pipelines de datos de sensores en tiempo real mediante Pub/Sub, Cloud Functions, Firestore y Cloud Run.",
+          "Desarrollé y mantuve aplicaciones empresariales con <strong>React, .NET, SQL Server y Oracle</strong>, trabajando tanto en frontend como en backend.",
+          "Incorporé <strong>interfaces interactivas e integraciones</strong> en sistemas empresariales existentes, adaptando tecnologías frontend modernas a aplicaciones legacy.",
+          "Contribuí a una <strong>plataforma de monitoreo IoT en Google Cloud</strong>, integrando datos de sensores y visualizaciones en tiempo real.",
         ],
       },
       {
         company: "Killa House Hotel",
+        modality: "onsite",
         position: "Desarrollador Front-End",
         startDate: "2016-07-01",
         endDate: "2017-07-01",
         responsibilities: [
-          "Rediseñé y modernicé por completo el sitio web de la empresa, mejorando significativamente la <strong>experiencia del usuario (UX) y el rendimiento</strong> de carga.",
-          "Desarrollé una <strong>solución personalizada de gestión de reservas</strong> mediante un plugin a medida, optimizando el procesamiento y flujo de solicitudes en línea.",
-          "Implementé un sistema automatizado de comunicación por correo electrónico para agilizar el contacto con los clientes y mejorar el seguimiento de las reservas.",
-          "Optimicé herramientas internas basadas en <strong>Excel</strong>, programando nuevas funcionalidades para llevar un control estructurado de los pagos y consumos de los huéspedes.",
+          "Rediseñé y modernicé el <strong>sitio web de la empresa</strong>, mejorando su navegación y presentación.",
+          "Desarrollé una <strong>solución de gestión de reservas</strong> y automaticé comunicaciones por correo electrónico para facilitar el seguimiento de las solicitudes.",
         ],
       },
       {
         company: "Llika Inversiones",
+        modality: "onsite",
         position: "Desarrollador Front-End",
         startDate: "2015-06-01",
         endDate: "2016-06-01",
         responsibilities: [
-          "Diseñé e implementé un <strong>plugin de reservas especializado</strong> para la gestión y control de horarios de visita al <strong>Santuario de Machu Picchu</strong>.",
-          "Creé y mantuve más de <strong>10 temas personalizados en Drupal</strong>, aplicando optimizaciones estrictas de usabilidad y velocidad de entrega web.",
-          "Desarrollé soluciones web a medida y componentes interactivos orientados a reservas para diversos clientes comerciales.",
+          "Desarrollé <strong>soluciones web y plugins de reservas</strong> para clientes comerciales, incluyendo la gestión de horarios de visita a Machu Picchu.",
+          "Creé y mantuve <strong>temas personalizados en Drupal</strong>, adaptados a las necesidades de cada cliente.",
         ],
       },
     ],
   },
   en: {
-    title: "Work Experience",
+    title: "Professional Experience",
     subTitle:
-      "Throughout my career, I've had the chance to work on diverse projects that shaped my skills and growth as a developer.",
+      "Experience building web applications, management tools, and solutions across different industries.",
     history: [
       {
         company: "TREMGroup",
+        modality: "remote",
         position: "Front-End Developer",
         startDate: "2023-01-01",
         endDate: "",
         responsibilities: [
-          "Designed and implemented a <strong>contextual visual editing system</strong> for the real estate CMS (IDX Boost), building reusable components like <i>SelectableItem</i> and <i>ModalEditor</i> to unify complex workflows.",
-          "Led the progressive adoption of <strong>TypeScript</strong> within a large legacy React and Redux codebase, enhancing code reliability and overall developer experience.",
-          "Actively participated in the <strong>migration from React 16 to React 18</strong>, modernizing critical dependencies, replacing deprecated libraries, and resolving compatibility challenges.",
-          "Developed a <strong>grid-based visual builder</strong> with drag-and-drop capabilities, delivering high page-creation flexibility and reducing dependency on rigid predefined layouts.",
-          "Built advanced administration interfaces, including the dedicated module for managing and assigning <i>tripwires</i> to specific client websites.",
+          "Developed <strong>visual editing tools and a drag-and-drop page builder</strong> for a real estate CMS used by clients across the United States.",
+          "Led the <strong>progressive adoption of TypeScript</strong> in a React and Redux codebase and contributed to the migration from React 16 to React 18.",
+          "Built <strong>reusable components and new features with React and Next.js</strong>, contributing to the platform’s modernization.",
+          "Used <strong>Sentry to investigate and resolve errors</strong> and participated in validating changes and deployments across development and production environments.",
         ],
       },
       {
         company: "Valtec Consultores",
+        modality: "remote",
         position: "Full-Stack Developer",
         startDate: "2022-01-01",
         endDate: "2023-08-01",
         responsibilities: [
-          "Developed and maintained enterprise applications using <strong>React, .NET, SQL Server, and Oracle</strong>, implementing new features and integrations across complex architectures.",
-          "Designed and implemented highly interactive user interfaces by introducing modern frontend technologies into legacy enterprise systems.",
-          "Contributed to the development and cloud deployment of an <strong>IoT monitoring platform on Google Cloud</strong>, integrating real-time sensor data pipelines using Pub/Sub, Cloud Functions, Firestore, and Cloud Run.",
+          "Developed and maintained business applications with <strong>React, .NET, SQL Server, and Oracle</strong>, working across both frontend and backend.",
+          "Added <strong>interactive interfaces and integrations</strong> to existing enterprise systems, introducing modern frontend technologies into legacy applications.",
+          "Contributed to an <strong>IoT monitoring platform on Google Cloud</strong>, integrating sensor data and real-time visualizations.",
         ],
       },
       {
         company: "Killa House Hotel",
+        modality: "onsite",
         position: "Front-End Developer",
         startDate: "2016-07-01",
         endDate: "2017-07-01",
         responsibilities: [
-          "Completely redesigned and modernized the company website, significantly improving <strong>user experience (UX) and loading performance</strong>.",
-          "Developed a <strong>custom reservation management solution</strong> via a tailored plugin, streamlining online booking request workflows.",
-          "Implemented an automated email communication system to streamline client interaction and enhance booking follow-ups.",
-          "Optimized internal <strong>Excel-based tools</strong>, adding advanced features to maintain a structured log of guest payments and in-house purchases.",
+          "Redesigned and modernized the <strong>company website</strong>, improving its navigation and presentation.",
+          "Developed a <strong>reservation management solution</strong> and automated email communications to support booking follow-ups.",
         ],
       },
       {
         company: "Llika Inversiones",
+        modality: "onsite",
         position: "Front-End Developer",
         startDate: "2015-06-01",
         endDate: "2016-06-01",
         responsibilities: [
-          "Designed and implemented a <strong>specialized reservation plugin</strong> to manage and control visiting schedules for the <strong>Machu Picchu Sanctuary</strong>.",
-          "Created and maintained over <strong>10 custom Drupal themes</strong>, focusing heavily on page speed, usability, and web performance optimization.",
-          "Developed custom web solutions and booking-related plugins tailored to the specific business needs of commercial clients.",
+          "Developed <strong>custom web solutions and booking plugins</strong> for business clients, including visitor time-slot management for Machu Picchu.",
+          "Created and maintained <strong>custom Drupal themes</strong>, tailored to each client’s needs.",
         ],
       },
     ],
@@ -112,4 +112,19 @@ export const ExperienceText: { [key in TLanguages]: TExperience } = {
 export const presentLabel: { [key in TLanguages]: string } = {
   es: "Actualidad",
   en: "Present",
+};
+
+export const modalityLabels: Record<TLanguages, Record<TWorkModality, string>> = {
+  es: {
+    remote: "Remoto",
+    onsite: "Presencial",
+    hybrid: "Híbrido",
+    "": "",
+  },
+  en: {
+    remote: "Remote",
+    onsite: "On-site",
+    hybrid: "Hybrid",
+    "": "",
+  },
 };

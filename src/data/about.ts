@@ -2,9 +2,9 @@ export const AboutText: { [key in TLanguages]: TAboutContent } = {
   es: {
     title: "Acerca de mí",
     subTitle:
-      "Ingeniero de Software enfocado en construir plataformas SaaS y aplicaciones web escalables.",
+      "Ingeniero de Software Full-Stack con una sólida base en desarrollo frontend.",
     content:
-      "Soy un <strong>Ingeniero de Software Full-Stack</strong> especializado en el ecosistema de <strong>TypeScript</strong>, destacando en tecnologías como <strong>React, Next.js, Node.js, NestJS</strong> y bases de datos relacionales, especialmente <strong>PostgreSQL</strong>.<br><br>Mi experiencia se centra en diseñar arquitecturas para sistemas distribuidos, desarrollar <strong>plataformas SaaS multi-tenant</strong> y llevar productos desde su concepción hasta producción. Me enfoco fuertemente en el rendimiento, la experiencia del desarrollador (DX) y la creación de soluciones mantenibles que resuelvan problemas de negocio reales.<br><br>A lo largo de mi carrera, he liderado iniciativas de modernización de <strong>sistemas legacy</strong> y trabajado activamente con infraestructuras cloud, integrando herramientas como <strong>Docker, Redis y flujos de trabajo asíncronos</strong>.<br><br>Me enorgullece ser alguien que cuida los detalles técnicos y arquitectónicos, asegurando que cada proyecto no solo sea funcional, sino que esté estructurado de forma confiable para escalar y adaptarse a nuevas necesidades técnicas.",
+      "Soy Jean Paul, ingeniero de software de Cusco, Perú. Desarrollo aplicaciones web con <strong>React y TypeScript</strong>, combinando interfaces interactivas con la integración de APIs y servicios backend.<br><br>Mi experiencia incluye <strong>plataformas de gestión de contenido y aplicaciones empresariales</strong>, donde he trabajado en nuevas funcionalidades, componentes reutilizables y modernización de sistemas existentes. Me enfoco en crear soluciones fáciles de usar y mantener.<br><br>También construyo productos propios con <strong>Next.js, NestJS y PostgreSQL</strong>, participando en todo el proceso: desde la definición de funcionalidades y el diseño de datos hasta la implementación y el despliegue con Docker.",
     buttonAction1Label: "Ver Proyectos",
     buttonAction1Url: "#proyectos",
     buttonAction2Label: "Contacto",
@@ -13,9 +13,9 @@ export const AboutText: { [key in TLanguages]: TAboutContent } = {
   en: {
     title: "About me",
     subTitle:
-      "Software Engineer focused on building scalable SaaS platforms and robust web applications.",
+      "Full-Stack Software Engineer with a strong foundation in frontend development.",
     content:
-      "I am a <strong>Full-Stack Software Engineer</strong> specializing in the <strong>TypeScript</strong> ecosystem, with deep expertise in <strong>React, Next.js, Node.js, NestJS</strong>, and relational databases, especially <strong>PostgreSQL</strong>.<br><br>My experience revolves around designing distributed system architectures, developing <strong>multi-tenant SaaS platforms</strong>, and taking products from concept to production. I focus heavily on performance, developer experience (DX), and building maintainable solutions that solve real business problems.<br><br>Throughout my career, I have led <strong>legacy system</strong> modernization initiatives and actively worked with cloud-based infrastructures, integrating tools like <strong>Docker, Redis, and asynchronous workflows</strong>.<br><br>I take pride in paying close attention to technical and architectural details, ensuring that every project is not only functional but reliably structured to scale and adapt to new technical requirements.",
+      "I'm Jean Paul, a software engineer based in Cusco, Peru. I develop web applications with <strong>React and TypeScript</strong>, combining interactive interfaces with API and backend service integrations.<br><br>My experience includes <strong>content management platforms and enterprise applications</strong>, where I've worked on new features, reusable components, and the modernization of existing systems. I focus on building solutions that are easy to use and maintain.<br><br>I also build independent products with <strong>Next.js, NestJS, and PostgreSQL</strong>, working across the entire process: from defining features and designing data models to implementation and deployment with Docker.",
     buttonAction1Label: "See Projects",
     buttonAction1Url: "#projects",
     buttonAction2Label: "Contact",

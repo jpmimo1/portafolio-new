@@ -75,8 +75,11 @@ type TSkillsContent = {
   groups: { [key in TSkillGroups]: TSkillGroup };
 };
 
+type TWorkModality = "remote" | "onsite" | "hybrid" | "";
+
 type TExperienceItem = {
   company: string;
+  modality: TWorkModality;
   position: string;
   startDate: string;
   endDate: string;
